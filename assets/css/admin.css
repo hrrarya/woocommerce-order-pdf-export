@@ -1,0 +1,327 @@
+/* WooCommerce Order PDF Export Admin Styles */
+
+.wc-order-pdf-export {
+    margin: 20px 0;
+}
+
+.wc-order-pdf-export h1 {
+    margin-bottom: 20px;
+}
+
+/* Filters */
+.wc-order-filters {
+    background: #fff;
+    border: 1px solid #ccd0d4;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 3px;
+}
+
+.wc-order-filters form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.wc-order-filters input[type="search"] {
+    min-width: 250px;
+}
+
+.wc-order-filters select {
+    min-width: 150px;
+}
+
+/* Orders Table */
+.orders {
+    background: #fff;
+    border: 1px solid #ccd0d4;
+    border-radius: 3px;
+}
+
+.orders th {
+    background: #f1f1f1;
+    border-bottom: 1px solid #ccd0d4;
+    font-weight: 600;
+}
+
+.orders td {
+    border-bottom: 1px solid #f1f1f1;
+    vertical-align: top;
+}
+
+.orders tr:hover {
+    background-color: #f9f9f9;
+}
+
+/* Column Widths */
+.column-order-id {
+    width: 10%;
+}
+
+.column-date {
+    width: 15%;
+}
+
+.column-customer {
+    width: 20%;
+}
+
+.column-status {
+    width: 12%;
+}
+
+.column-total {
+    width: 12%;
+}
+
+.column-items {
+    width: 8%;
+}
+
+.column-payment {
+    width: 15%;
+}
+
+.column-actions {
+    width: 8%;
+}
+
+/* Order Status */
+.order-status {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 3px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.status-pending {
+    background-color: #ffba00;
+}
+
+.status-processing {
+    background-color: #c6e1c6;
+    color: #5b841b;
+}
+
+.status-on-hold {
+    background-color: #f8dda7;
+    color: #94660c;
+}
+
+.status-completed {
+    background-color: #c8d7e1;
+    color: #2e4453;
+}
+
+.status-cancelled {
+    background-color: #eba3a3;
+    color: #761919;
+}
+
+.status-refunded {
+    background-color: #e5e5e5;
+    color: #777;
+}
+
+.status-failed {
+    background-color: #eba3a3;
+    color: #761919;
+}
+
+/* Customer Info */
+.customer small {
+    color: #666;
+    font-size: 12px;
+}
+
+/* Order ID */
+.order-id strong {
+    font-weight: 600;
+}
+
+.row-actions {
+    margin-top: 5px;
+    font-size: 12px;
+}
+
+.row-actions span {
+    margin-right: 10px;
+}
+
+.row-actions a {
+    color: #0073aa;
+    text-decoration: none;
+}
+
+.row-actions a:hover {
+    color: #005177;
+}
+
+/* Download Button */
+.download-pdf {
+    position: relative;
+}
+
+.download-pdf:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.download-pdf.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 16px;
+    height: 16px;
+    margin: -8px 0 0 -8px;
+    border: 2px solid #fff;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+.download-pdf.loading {
+    color: transparent;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* No Orders */
+.no-orders {
+    text-align: center;
+    padding: 40px 20px;
+    color: #666;
+    font-style: italic;
+}
+
+/* Pagination */
+.tablenav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.tablenav-pages {
+    display: flex;
+    align-items: center;
+}
+
+.pagination-links {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.pagination-links a,
+.pagination-links span {
+    display: inline-block;
+    padding: 5px 10px;
+    text-decoration: none;
+    border: 1px solid #ddd;
+    background: #fff;
+    color: #0073aa;
+}
+
+.pagination-links .current {
+    background: #0073aa;
+    color: #fff;
+    border-color: #0073aa;
+}
+
+.pagination-links a:hover {
+    background: #f1f1f1;
+}
+
+.displaying-num {
+    color: #666;
+    font-size: 12px;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .column-payment {
+        display: none;
+    }
+}
+
+@media (max-width: 900px) {
+    .column-items {
+        display: none;
+    }
+    
+    .wc-order-filters form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .wc-order-filters input[type="search"],
+    .wc-order-filters select {
+        min-width: auto;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    .column-date {
+        display: none;
+    }
+    
+    .tablenav {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .orders th,
+    .orders td {
+        padding: 8px 5px;
+        font-size: 12px;
+    }
+    
+    .download-pdf {
+        padding: 5px 8px;
+        font-size: 11px;
+    }
+}
+
+/* Success/Error Messages */
+.notice {
+    margin: 15px 0;
+    padding: 10px 15px;
+    border-left: 4px solid;
+    background: #fff;
+}
+
+.notice-success {
+    border-left-color: #46b450;
+    color: #155724;
+    background-color: #d4edda;
+}
+
+.notice-error {
+    border-left-color: #dc3232;
+    color: #721c24;
+    background-color: #f8d7da;
+}
+
+.notice-warning {
+    border-left-color: #ffb900;
+    color: #856404;
+    background-color: #fff3cd;
+}
+
+.notice-info {
+    border-left-color: #00a0d2;
+    color: #0c5460;
+    background-color: #d1ecf1;
+}
